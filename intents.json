@@ -1,0 +1,48 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Hey", "Whats up"],
+         "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
+         "responses": ["Hope to see you soon!", "Talk to you later", "Goodbye!"],
+         "context_set": ""
+        },
+        {"tag": "age",
+         "patterns": ["how old", "how old is apexkeyboards", "what is your age", "how old are you", "age?", "how old is the company", "business age"],
+         "responses": ["Our company is 4 years old!", "We have been open since 2017"],
+         "context_set": ""
+        },
+        {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?"],
+         "responses": ["You can call me Keebs.", "I'm KeebsChat!", "I'm KeebsChat a friendly bot for ApexKeyboards."],
+         "context_set": ""
+        },
+        {"tag": "shop",
+         "patterns": ["Id like to buy something", "what does your website sell?", "what is for sale", "what products do you sell?"],
+         "responses": ["We sell a variety of keyboard parts, accessories, and group buys", "Our website has keyboard components, lubricants, group buys, and more!"],
+         "context_set": ""
+        },
+        {"tag": "hours",
+         "patterns": ["when are you guys open", "what are your hours", "hours of operation", "When are you guys open today?"],
+         "responses": ["We are open 24/7 Monday-Friday!"],
+         "context_set": ""
+        },
+        {"tag": "location",
+         "patterns": ["where is the store located", "where are you from", "Where's your store?"],
+         "responses": ["We are located in Toronto, Canada", "Our business is based in Toronto, Canada"],
+         "context_set": ""
+        },
+        {"tag": "refund",
+         "patterns": ["I want a refund", "how can I refund my purchase", "what is your refund policy?", "I want to return my order"],
+         "responses": ["Please refer to https://www.apexkeyboards.ca/policies/refund-policy for the full refund policy"],
+         "context_set": ""
+        },
+        {"tag": "Switches",
+         "patterns": ["What switches do you sell?", "What types of switches do you offer?", "switches", ""],
+         "responses": [""],
+         "context_set": ""
+        }
+   ]
+}
