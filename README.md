@@ -3,3 +3,6 @@ Mechanical Keyboard Chatbot, designed to enhance the keyboard community and help
 
 ## Project Status
 This project is currently underway and I will post updates on this readme file. 
+
+## Updates:
+6/18/2021 - Added a python webscraper program to scrape keyboard product info from https://www.apexkeyboards.ca/. This scraper will be necessary for the chatbot's main functionality.
