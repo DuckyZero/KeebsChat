@@ -5,7 +5,7 @@
          "context_set": ""
         },
         {"tag": "goodbye",
-         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "bye"],
          "responses": ["Hope to see you soon!", "Talk to you later", "Goodbye!"],
          "context_set": ""
         },
@@ -15,12 +15,12 @@
          "context_set": ""
         },
         {"tag": "name",
-         "patterns": ["what is your name", "what should I call you", "whats your name?"],
+         "patterns": ["what is your name", "what should I call you", "whats your name?", "who are you"],
          "responses": ["You can call me Keebs.", "I'm KeebsChat!", "I'm KeebsChat a friendly bot for ApexKeyboards."],
          "context_set": ""
         },
         {"tag": "shop",
-         "patterns": ["Id like to buy something", "what does your website sell?", "what is for sale", "what products do you sell?"],
+         "patterns": ["Id like to buy something", "what does your website sell?", "what is for sale", "what products do you sell?", "what do you sell", "what shop has"],
          "responses": ["We sell a variety of keyboard parts, accessories, and group buys", "Our website has keyboard components, lubricants, group buys, and more!"],
          "context_set": ""
         },
@@ -39,10 +39,35 @@
          "responses": ["Please refer to https://www.apexkeyboards.ca/policies/refund-policy for the full refund policy"],
          "context_set": ""
         },
-        {"tag": "Switches",
-         "patterns": ["What switches do you sell?", "What types of switches do you offer?", "switches", ""],
+        {"tag": "switches",
+         "patterns": ["What switches do you sell?", "What types of switches do you offer?", "switches"],
+         "responses": [""],
+         "context_set": ""
+        },
+          {"tag": "lubes",
+         "patterns": ["Krytox", "What lube do you sell?", "What types of lube", "Do you have lube", "lube", "keyboard lube"],
+         "responses": [""],
+         "context_set": ""
+        },
+          {"tag": "keysets",
+         "patterns": ["keycap", "keycap sets", "keyboard keycaps", "What keycaps do you have?", "Keycaps for sale", "GMK keycaps", "ePBT keycaps", "SA keycaps", "keysets", "What keysets do you have?", "Keysets for sale"],
+         "responses": [""],
+         "context_set": ""
+        },
+          {"tag": "tuning-parts",
+         "patterns": ["keyboard springs", "springs", "rubber dome", "switch films", "films", "Do you have tuning parts?", "Are spare parts available", "tuning parts"],
+         "responses": [""],
+         "context_set": ""
+        },
+          {"tag": "keyboard-kits",
+         "patterns": ["keyboard kit", "Do you sell keyboard kits?", "Are keyboard kits available", "I need a keyboard kit", "keyboard kit for sale"],
+         "responses": [""],
+         "context_set": ""
+        },
+          {"tag": "snacks",
+         "patterns": ["asian snacks", "foreign snacks", "snacks", "is there snacks for sale?", "food", "Do you sell snacks?"],
          "responses": [""],
          "context_set": ""
         }
-   ]
+]
 }
