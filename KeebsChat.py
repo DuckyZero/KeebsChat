@@ -25,15 +25,20 @@ from nltk.stem.lancaster import LancasterStemmer
 
 stemmer = LancasterStemmer()
 
+# Import other files
+from apex_webscrape import find_product
+
+product_tags = ['lubes', 'switches', 'keysets', 'deskmats', 'tuning-parts', 'keyboard-kits', 'snacks']
+
+tf.compat.v1.disable_resource_variables
 # import our chat-bot intents file
 with open("intents.json") as file:
     data = json.load(file)
-    #print(data)
+    # print(data)
 
-# try:
-#     with open("data.pickle", "rb") as f:
-#         words, labels, training, output = pickle.load(f)
-
+    # try:
+    #     with open("data.pickle", "rb") as f:
+    #         words, labels, training, output = pickle.load(f)
 
     words = []
     labels = []
@@ -42,6 +47,7 @@ with open("intents.json") as file:
     training = []
     output = []
     ignore_words = ['?']
+
 
     # loop through each sentence in our intents patterns
     for intent in data["intents"]:
@@ -90,6 +96,7 @@ with open("intents.json") as file:
     #     pickle.dump((words, labels, training, output), f)
 
 # resets underlying data graph
+
 tf.compat.v1.get_default_graph()
 
 # Input data for model
@@ -142,11 +149,15 @@ def chat():
         # bug check print statement
         # print(tag)
 
-        for tg in data["intents"]:
-            if tg["tag"] == tag:
-                responses = tg['responses']
+        if tag in product_tags:
+            print("KeebsChat: These are the {} that we offer".format(tag))
+            find_product(tag)
+        else:
+            for tg in data["intents"]:
+                if tg["tag"] == tag:
+                    responses = tg['responses']
 
-        print("KeebsChat: " + random.choice(responses))
+            print("KeebsChat: " + random.choice(responses))
 
 
 chat()
