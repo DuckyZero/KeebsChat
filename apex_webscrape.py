@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-# Have to pip install lxml to work properly
+# Have to pip install lxml & bs4 to work properly
 # testLink = 'https://www.apexkeyboards.ca/collections/switches/products/alpacas'
 
 baseurl = 'https://www.apexkeyboards.ca/'
