@@ -3,12 +3,6 @@
 # Start Date: 5/31/2021
 # End Date: Ongoing
 
-###############################
-# TO DO:
-# Make a multi-use web scraper for apexkeyboards to find any items
-# Make a Flask UI for the bot
-################################
-
 # Tensorflow dependencies
 import numpy
 import numpy as np
