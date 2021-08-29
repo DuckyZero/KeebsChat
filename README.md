@@ -15,18 +15,19 @@ This program was made with the programming language Python along with a few fram
 * Beautifulsoup (bs4)
 * Random
 
-## Screenshots Of KeebsChat:
+## KeebsChat In Action:
 
-![basic_chat](https://user-images.githubusercontent.com/61894684/127706380-002a2ac5-9e35-4e9d-87d8-8d77f351cb68.gif)
-![product_chat](https://user-images.githubusercontent.com/61894684/127706490-56748a43-5798-4bdb-8a7d-6607d8bbee5b.gif)
+https://user-images.githubusercontent.com/61894684/131236544-ed2c64c2-463e-4693-af3d-72bbc346b47f.mp4
+
+https://user-images.githubusercontent.com/61894684/131236546-4cd50079-480c-442e-b39c-18bed68e724f.mp4
 
 ## Future Improvements:
 Some of the future improvements/features I would add to this program are listed below:
-* Create a flask web app for a greater user experience using the chatbot.
 * Make a .exe file for users to directly download and use the program without to much setup needed.
+* Talk to local computer keyboard businesses and try to implement the chatbot into their website.
 
 ## Updates:
 - 6/18/2021 - Added a python webscraper program to scrape keyboard product info from https://www.apexkeyboards.ca/. This scraper will be necessary for the chatbot's main functionality.
 - 7/09/2021 - Completed all functionality for the chatbot and fixed some errors in apexkeyboards webscraper, will be fixing up bugs and cleaning the code.
-- 7/28/2021 - Code is cleaned and bugs are fixed. Will complete read me in the next few days
-- 7/30/2021 - Finished the readme file, so the project is now complete.
+- 7/28/2021 - Code is cleaned and bugs are fixed. Next I will implement a Flask webpage to host KeebsChat.
+- 8/28/2021 - I have finished the Flask webpage for the chatbot and now have completed this project. Yay!
