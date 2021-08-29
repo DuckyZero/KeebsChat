@@ -14,7 +14,7 @@ This program was made with the programming language Python along with a few fram
 * Json
 * Pickle
 * Beautifulsoup (bs4)
-* Random
+* HTML + CSS
 
 ## KeebsChat In Action:
 
