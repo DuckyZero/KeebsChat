@@ -10,23 +10,33 @@
          "context_set": ""
         },
         {"tag": "age",
-         "patterns": ["how old", "how old is apexkeyboards", "what is your age", "how old are you", "age?", "how old is the company", "business age"],
-         "responses": ["Our company is 4 years old!", "We have been open since 2017"],
+         "patterns": ["what is your age", "how old are you", "age?", "how old is the company", "What is the businesses age?"],
+         "responses": ["I was developed in the summer of 2021!", "I was born at a very young age..."],
          "context_set": ""
         },
         {"tag": "name",
          "patterns": ["what is your name", "what should I call you", "whats your name?", "who are you"],
-         "responses": ["You can call me Keebs.", "I'm KeebsChat!", "I'm KeebsChat a friendly bot for ApexKeyboards."],
+         "responses": ["You can call me Keebs.", "I'm KeebsChat!", "I'm KeebsChat a friendly chatbot"],
+         "context_set": ""
+        },
+        {"tag": "purpose",
+         "patterns": ["What do you do?", "What is your purpose", "What is your job?", "What does your chatbot do?"],
+         "responses": ["I am a chatbot designed to answer any questions about mechanical keyboards!"],
          "context_set": ""
         },
         {"tag": "shop",
-         "patterns": ["Id like to buy something", "what does your website sell?", "what is for sale", "what products do you sell?", "what do you sell", "what shop has"],
-         "responses": ["We sell a variety of keyboard parts, accessories, and group buys", "Our website has keyboard components, lubricants, group buys, and more!"],
+         "patterns": ["Id like to buy something", "what does your website sell?", "what is for sale", "what products are you sell?"],
+         "responses": ["We sell a variety of keyboard parts, accessories, and group buys", "ApexKeyboards website has keyboard components, lubricants, group buys, and more!"],
          "context_set": ""
         },
         {"tag": "hours",
          "patterns": ["when are you guys open", "what are your hours", "hours of operation", "When are you guys open today?"],
          "responses": ["We are open 24/7 Monday-Friday!"],
+         "context_set": ""
+        },
+        {"tag": "buy",
+         "patterns": ["What shops do you recommend?", "Are there local shops to buy from?", "Where can I buy keyboard parts", "How can I buy keyboard", "Where are shops to buy from"],
+         "responses": ["I would recommend a local Ontario store called ApexKeyboards for all your keyboard needs!", "ApexKeyboards is a local shop in Toronto to buy any keyboard parts."],
          "context_set": ""
         },
         {"tag": "location",
@@ -50,22 +60,22 @@
          "context_set": ""
         },
           {"tag": "keysets",
-         "patterns": ["keycap", "keycap sets", "keyboard keycaps", "What keycaps do you have?", "Keycaps for sale", "GMK keycaps", "ePBT keycaps", "SA keycaps", "keysets", "What keysets do you have?", "Keysets for sale"],
+         "patterns": ["keycap sets", "keyboard keycaps", "What keycaps do you have?", "Keycaps for sale", "GMK keycaps", "ePBT keycaps", "SA keycaps", "What keysets do you have?"],
          "responses": [""],
          "context_set": ""
         },
           {"tag": "tuning-parts",
-         "patterns": ["keyboard springs", "springs", "rubber dome", "switch films", "films", "Do you have tuning parts?", "Are spare parts available", "tuning parts"],
+         "patterns": ["keyboard springs", "do you have keyboard spings?", "What rubber dome do you offer?", "switch films", "Do you have tuning parts?", "Are spare parts available"],
          "responses": [""],
          "context_set": ""
         },
           {"tag": "keyboard-kits",
-         "patterns": ["keyboard kit", "Do you sell keyboard kits?", "Are keyboard kits available", "I need a keyboard kit", "keyboard kit for sale"],
+         "patterns": ["keyboard kit", "Do you sell keyboard kits?", "Are keyboard kits available", "I need a keyboard kit", "Keyboard kit for sale"],
          "responses": [""],
          "context_set": ""
         },
           {"tag": "snacks",
-         "patterns": ["asian snacks", "foreign snacks", "snacks", "is there snacks for sale?", "food", "Do you sell snacks?"],
+         "patterns": ["asian snacks", "foreign snacks", "is there snacks for sale?", "food", "Do you sell snacks?"],
          "responses": [""],
          "context_set": ""
         }
