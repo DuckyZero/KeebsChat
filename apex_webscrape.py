@@ -1,19 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 
-# Have to pip install lxml & bs4 to work properly
+# Have to pip install lxml to work properly
 # testLink = 'https://www.apexkeyboards.ca/collections/switches/products/alpacas'
 
 baseurl = 'https://www.apexkeyboards.ca/'
 productLink = []
 switchList = []
 tag = ''
-
-
-# for loop for multiple product pages
-# for x in range(1,6):
-
-# print(product_list)
+output = []
 
 def find_product(tag):
     r = requests.get('https://www.apexkeyboards.ca/collections/{}'.format(tag))
@@ -34,16 +29,6 @@ def find_product(tag):
         name = soup.find('h1', class_='product-single__title').text.strip()
         price = soup.find('span', class_='product-single__price').text.strip()
 
-        print(name + " " + price)
+        productLink.clear()
 
-    productLink.clear()
-
-# Testing multiple products
-# tag = 'lubes'
-# find_product(tag)
-# print("")
-# tag = 'switches'
-# find_product(tag)
-# print("")
-# tag = 'tuning-parts'
-# find_product(tag)
+        return "{} {} is one of many {} we have! Checkout ApexKeyboards for the full list.".format(name, price, tag)
