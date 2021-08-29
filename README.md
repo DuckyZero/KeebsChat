@@ -3,11 +3,12 @@ Mechanical Keyboard Chatbot, designed to enhance the keyboard community and help
 
 ## How It Was Built:
 
-This program was made with the programming language Python along with a few frameworks such as Tensorflow for creating and training neural networks, NLTK for tokenizing & stemming words and numpy to manage data. The full list of languages & frameworks are listed below:
+This program was made with the programming language Python along with a few frameworks such as Tensorflow for creating and training neural networks, NLTK for tokenizing & stemming words, Flask to provide a webpage for the chatbot and numpy to manage data. The full list of languages & frameworks are listed below:
 
 * Python
 * Tensorflow
 * Tflearn
+* Flask
 * NLTK
 * Numpy
 * Json
