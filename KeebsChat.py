@@ -1,7 +1,12 @@
 # Author: Christopher Rossi
 # Project Name: KeebsChat - Mechanical Keyboard Chatbot
 # Start Date: 5/31/2021
-# End Date: Ongoing
+# End Date: 8/28/2021
+
+# Flask Dependencies
+from flask import Flask, render_template, request
+
+app = Flask(__name__, template_folder='.')  # '.' means the current directory
 
 # Tensorflow dependencies
 import numpy
@@ -14,7 +19,6 @@ import random
 import json
 import pickle
 import nltk
-# nltk.download('punkt')
 from nltk.stem.lancaster import LancasterStemmer
 
 stemmer = LancasterStemmer()
@@ -25,23 +29,22 @@ from apex_webscrape import find_product
 product_tags = ['lubes', 'switches', 'keysets', 'deskmats', 'tuning-parts', 'keyboard-kits', 'snacks']
 
 tf.compat.v1.disable_resource_variables
+
 # import our chat-bot intents file
 with open("intents.json") as file:
     data = json.load(file)
     # print(data)
 
-    # try:
-    #     with open("data.pickle", "rb") as f:
-    #         words, labels, training, output = pickle.load(f)
+try:
+    with open("data.pickle", "rb") as f:
+        words, labels, training, output, docs_x, docs_y, ignore_words = pickle.load(f)
 
+except:
     words = []
     labels = []
     docs_x = []
     docs_y = []
-    training = []
-    output = []
     ignore_words = ['?']
-
 
     # loop through each sentence in our intents patterns
     for intent in data["intents"]:
@@ -62,6 +65,9 @@ with open("intents.json") as file:
     words = sorted(list(set(words)))
     # sort label list
     labels = sorted(labels)
+
+    training = []
+    output = []
     out_empty = [0 for _ in range(len(labels))]
 
     for x, doc in enumerate(docs_x):
@@ -86,8 +92,8 @@ with open("intents.json") as file:
     training = np.array(training)
     output = np.array(output)
 
-    # with open("data.pickle", "wb") as f:
-    #     pickle.dump((words, labels, training, output), f)
+    with open("data.pickle", "wb") as f:
+        pickle.dump((words, labels, training, output, docs_x, docs_y, ignore_words), f)
 
 # resets underlying data graph
 
@@ -102,17 +108,18 @@ net = tflearn.fully_connected(net, 8)
 # softmax --> outputs a probability of each neuron
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
-
 # DNN --> Deep Neural Network
 model = tflearn.DNN(net)
+# model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+# model.save("model.tflearn")
 
 # if model exists load it, otherwise retrain and save a new one
-# try:
-#      model.load("model.tflearn")
-# except:
-#     # fit out model
-model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
-model.save("model.tflearn")
+try:
+    model.load("model.tflearn")
+except:
+    # fit & save our model
+    model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+    model.save("model.tflearn")
 
 
 def bag_of_words(s, words):
@@ -129,10 +136,9 @@ def bag_of_words(s, words):
     return numpy.array(bag)
 
 
-def chat():
-    print("Start Talking with the bot (type 'quit' to stop): ")
+def chat(text):
     while True:
-        inp = input("You: ")
+        inp = text
         if inp.lower() == "quit":
             break
 
@@ -140,18 +146,27 @@ def chat():
         # returns the greatest value in our list
         results_index = numpy.argmax(results)
         tag = labels[results_index]
-        # bug check print statement
-        # print(tag)
 
         if tag in product_tags:
-            print("KeebsChat: These are the {} that we offer".format(tag))
-            find_product(tag)
+            return find_product(tag)
         else:
             for tg in data["intents"]:
                 if tg["tag"] == tag:
                     responses = tg['responses']
 
-            print("KeebsChat: " + random.choice(responses))
+            return random.choice(responses)
 
 
-chat()
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+@app.route("/get")
+def get_bot_response():
+    userText = request.args.get('msg')
+    return chat(userText)
+
+
+if __name__ == "__main__":
+    app.run()
