@@ -1,5 +1,5 @@
 # KeebsChat
-Mechanical Keyboard Chatbot, designed to enhance the keyboard community and help new comers learn more about this awesome hobby and promote local keyboard busniesses in Canada!
+Mechanical Keyboard Chatbot, designed to enhance the keyboard community and help new comers learn more about this awesome hobby and promote local keyboard businesses in Canada!
 
 ## How It Was Built:
 
